@@ -1,0 +1,114 @@
+/* Mobile First Approach */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Header & Navigation */
+.header {
+    background: var(--rainbow-7);
+    padding: 1rem;
+    position: relative;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.8rem;
+    color: var(--text-light);
+    text-decoration: none;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-link {
+    color: var(--text-light);
+    text-decoration: none;
+    padding: 0.5rem;
+    transition: opacity 0.3s;
+}
+
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-light);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(45deg, var(--rainbow-5), var(--rainbow-3));
+    padding: 4rem 1rem;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+
+/* Events Calendar */
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
+}
+
+.event-card {
+    background: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Signup Form */
+.signup-form {
+    max-width: 500px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 10px;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+    
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--rainbow-7);
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem;
+    }
+    
+    .nav-menu.active {
+        display: flex;
+    }
+}

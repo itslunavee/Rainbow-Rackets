@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Quicksand:wght@400;600&display=swap');
+
+:root {
+    --rainbow-1: #ffadad; /* Pastel Red */
+    --rainbow-2: #ffd6a5; /* Pastel Orange */
+    --rainbow-3: #fdffb6; /* Pastel Yellow */
+    --rainbow-4: #caffbf; /* Pastel Green */
+    --rainbow-5: #9bf6ff; /* Pastel Blue */
+    --rainbow-6: #a0c4ff; /* Pastel Indigo */
+    --rainbow-7: #bdb2ff; /* Pastel Violet */
+    --text-dark: #2d3436;
+    --text-light: #f9f9f9;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}

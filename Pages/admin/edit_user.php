@@ -1,5 +1,10 @@
 <?php
-require_once('dashboard.php');
+session_start();
+if (!isset($_SESSION['admin_logged_in'])) {
+    header("Location: ../server/admin/login.php");
+    exit();
+}
+require_once('../../Server/db_connect.php');
 
 // Get user ID from URL
 $user_id = $_GET['id'] ?? null;

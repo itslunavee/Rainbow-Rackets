@@ -65,13 +65,13 @@ $dashboard = getDashboardData($pdo);
                     </thead>
                     <tbody>
                         <?php foreach($dashboard['pending_users'] as $user): ?>
-                        <tr>
+                        <tr data-user-id="<?= $user['user_id'] ?>">
                             <td><?= htmlspecialchars($user['name']) ?></td>
                             <td><?= htmlspecialchars($user['email']) ?></td>
                             <td><?= date('M j, Y', strtotime($user['created_at'])) ?></td>
                             <td>
-                                <a href="approve_user.php?id=<?= $user['user_id'] ?>" class="btn-approve">Approve</a>
-                                <a href="reject_user.php?id=<?= $user['user_id'] ?>" class="btn-reject">Reject</a>
+                                <button class="btn-approve" onclick="handleApproval(<?= $user['user_id'] ?>, 'approve')">Approve</button>
+                                <button class="btn-reject" onclick="handleApproval(<?= $user['user_id'] ?>, 'reject')">Reject</button>
                             </td>
                         </tr>
                         <?php endforeach; ?>

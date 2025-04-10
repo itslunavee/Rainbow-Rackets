@@ -24,6 +24,10 @@ if (isset($_SESSION['error'])) {
 </head>
 <body>
 
+<nav>
+  <a href="dashboard.php">Back to Dashboard</a>
+</nav>
+
 <h2>Events</h2>
 <!-- Add New Event -->
 <form method="POST" action="../../Server/admin/add_event.php">

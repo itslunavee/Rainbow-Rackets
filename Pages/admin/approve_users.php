@@ -14,25 +14,33 @@ require_once('../../Server/db_connect.php');
     <link rel="stylesheet" href="/rainbow-rackets/Styles/admin.css">
 </head>
 <body>
-    
     <nav>
         <a href="dashboard.php">Back to Dashboard</a>
     </nav>
 
     <h2>Pending Approvals</h2>
     <table>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Registration Date</th>
+            <th>Actions</th>
+        </tr>
         <?php
         $stmt = $pdo->query("SELECT * FROM users WHERE status = 'unverified'");
         while ($user = $stmt->fetch()):
         ?>
             <tr>
-            <td>
-            <form method="POST" action="../../Server/admin/approval.php">
-            <input type="hidden" name="user_id" value="<?= $user['user_id'] ?>">
-            <button type="submit" name="approve" class="btn-approve">Approve</button>
-            <button type="submit" name="reject" class="btn-reject">Reject</button>
-            </form>
-            </td>
+                <td><?= htmlspecialchars($user['name']) ?></td>
+                <td><?= htmlspecialchars($user['email']) ?></td>
+                <td><?= date('M j, Y', strtotime($user['created_at'])) ?></td>
+                <td>
+                    <form method="POST" action="../../Server/admin/approval.php">
+                        <input type="hidden" name="user_id" value="<?= $user['user_id'] ?>">
+                        <button type="submit" name="approve" class="btn-approve">Approve</button>
+                        <button type="submit" name="reject" class="btn-reject">Reject</button>
+                    </form>
+                </td>
             </tr>
         <?php endwhile; ?>
     </table>
